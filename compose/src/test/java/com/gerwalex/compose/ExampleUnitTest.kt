@@ -1,4 +1,4 @@
-package com.gerwalex.demo
+package com.gerwalex.compose
 
 import org.junit.Test
 

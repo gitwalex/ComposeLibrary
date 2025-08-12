@@ -1,4 +1,4 @@
-package com.gerwalex.demo
+package com.gerwalex.compose
 
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
@@ -16,11 +16,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.unit.dp
 
+/**
+ * A Composable function that creates a button with a "breathing" animation when in a loading state.
+ *
+ * When `isLoading` is true, the button will display a [CircularProgressIndicator] and will have a
+ * subtle scaling animation, giving it a "breathing" effect. The button will also be disabled.
+ * When `isLoading` is false, the button will display the provided [text] and will be enabled.
+ *
+ * @param isLoading A boolean indicating whether the button is in a loading state. Defaults to `false`.
+ * @param text The text to display on the button when it's not loading. Defaults to "Submit".
+ * @param modifier The [Modifier] to be applied to the button. Defaults to [Modifier].
+ * @param onClick A lambda function to be executed when the button is clicked.
+ */
 @Composable
 fun BreathingButton(
+    modifier: Modifier = Modifier,
     isLoading: Boolean = false,
     text: String = "Submit",
-    modifier: Modifier = Modifier,
     onClick: () -> Unit,
 ) {
     val infiniteTransition = rememberInfiniteTransition()
