@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-    namespace = "com.gerwalex.demo"
+    namespace = "com.gerwalex.library"
     compileSdk = 36
 
     defaultConfig {

@@ -1,4 +1,4 @@
-package com.gerwalex.compose
+package com.gerwalex.library
 
 import org.junit.Test
 
