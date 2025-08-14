@@ -60,6 +60,5 @@ dependencies {
 
     // SplashScreen
     implementation(libs.splashscreen)
-    implementation(libs.customSplashScreen)
 
 }

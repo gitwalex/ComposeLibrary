@@ -24,7 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
@@ -35,11 +35,31 @@ import kotlin.time.Duration
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.DurationUnit
 
+/**
+ * A Composable function that displays a heartbeat-like ripple animation around a central content.
+ * It also supports an exit animation where a circle expands to fill the screen.
+ *
+ * The ripple animation consists of multiple expanding and fading circles.
+ * The exit animation is triggered when `isVisible` becomes `false`.
+ *
+ * @param modifier Modifier to be applied to the root Box of the animation.
+ * @param isVisible Controls the visibility of the heartbeat animation.
+ *                  When set to `false`, the exit animation will start.
+ * @param exitAnimationDuration The duration of the exit animation.
+ *                              Defaults to [Duration.ZERO], meaning no exit animation by default.
+ * @param exitAnimationCircleColor The color of the expanding circle during the exit animation.
+ *                                 Defaults to [Color.Blue].
+ * @param onStartExitAnimation A lambda that is invoked when the exit animation starts.
+ *                             Defaults to an empty lambda.
+ * @param content The Composable content to be displayed at the center of the animation.
+ *                This content will be surrounded by the ripple effect.
+ */
 @Composable
 fun HeartBeatAnimation(
     modifier: Modifier = Modifier,
     isVisible: Boolean = true,
     exitAnimationDuration: Duration = Duration.ZERO,
+    exitAnimationCircleColor: Color = Color.Blue,
     onStartExitAnimation: () -> Unit = {},
     content: @Composable () -> Unit
 ) {
@@ -62,9 +82,9 @@ fun HeartBeatAnimation(
     }
 
     // Calculate screen diagonal for exit animation scaling
-    val configuration = LocalConfiguration.current
-    val screenWidth = configuration.screenWidthDp
-    val screenHeight = configuration.screenHeightDp
+    val configuration = LocalWindowInfo.current.containerSize
+    val screenWidth = configuration.width
+    val screenHeight = configuration.height
     val screenDiagonal = sqrt((screenWidth * screenWidth + screenHeight * screenHeight).toFloat())
 
     // Exit animation scale with snappy easing
@@ -115,7 +135,7 @@ fun HeartBeatAnimation(
                         scaleY = exitAnimationScale
                     }
                     .background(
-                        color = Color.Blue,
+                        color = exitAnimationCircleColor,
                         shape = CircleShape
                     )
             )
