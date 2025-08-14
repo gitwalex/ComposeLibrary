@@ -1,4 +1,4 @@
-package com.gerwalex.compose
+package com.gerwalex.library.compose.components
 
 
 import androidx.compose.animation.core.Animatable

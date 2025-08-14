@@ -1,19 +1,18 @@
 [versions]
 agp = "8.12.0"
 kotlin = "2.2.0"
-animationCore = "1.8.3"
+animationCore = "1.9.0"
 activityCompose = "1.10.1"
 appcompat = "1.7.1"
-composeBom = "2025.07.00"
-coreKtx = "1.16.0"
+composeBom = "2025.08.00"
+coreKtx = "1.17.0"
 espressoCore = "3.7.0"
 kibuto = "1.0.0"  #custom splashscreen, see https://medium.com/@kibotu/android-animated-splash-screens-compose-b17efcaadd53
 junit = "4.13.2"
 junitVersion = "1.3.0"
 lifecycleRuntimeKtx = "2.9.2"
 material3 = "1.3.2"
-runtime = "1.8.3"
-splashscreen = "1.0.1"
+runtime = "1.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,8 +33,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 androidx-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "runtime" }
 androidx-animation-core = { group = "androidx.compose.animation", name = "animation-core", version.ref = "animationCore" }
 material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
-customSplashScreen = { module = "net.kibotu:androidx-splashscreen-compose", version.ref = "kibuto" }
+splashscreen = { module = "net.kibotu:androidx-splashscreen-compose", version.ref = "kibuto" }
 
 
 [plugins]
