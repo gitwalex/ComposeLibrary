@@ -59,6 +59,9 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.runtime)
     implementation(libs.androidx.animation.core)
+
+
+
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.junit)
