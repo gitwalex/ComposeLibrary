@@ -1,4 +1,4 @@
-package com.gerwalex.batteryguard.ui.theme
+package com.gerwalex.library.theme
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.runtime.Immutable

@@ -1,4 +1,4 @@
-package com.gerwalex.batteryguard.ui.theme
+package com.gerwalex.library.theme
 
 import android.app.Activity
 import androidx.compose.animation.AnimatedContent

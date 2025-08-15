@@ -60,6 +60,8 @@ dependencies {
     implementation(libs.androidx.runtime)
     implementation(libs.androidx.animation.core)
 
+    implementation(libs.splashscreen)
+
 
 
     testImplementation(libs.junit)

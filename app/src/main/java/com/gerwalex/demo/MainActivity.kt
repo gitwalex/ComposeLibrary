@@ -21,12 +21,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.lifecycleScope
-import com.gerwalex.batteryguard.ui.theme.GerwalexTheme
 import com.gerwalex.library.R
 import com.gerwalex.library.StaggeredList
 import com.gerwalex.library.animation.HeartBeatAnimation
 import com.gerwalex.library.compose.calculator.CalculatorScreen
 import com.gerwalex.library.compose.components.BreathingButton
+import com.gerwalex.library.theme.GerwalexTheme
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import net.kibotu.splashscreen.SplashScreenDecorator

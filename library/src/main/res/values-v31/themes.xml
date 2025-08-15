@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Compose.SplashScreen" parent="Theme.SplashScreen">
+        <item name="colorPrimary">@color/md_theme_light_surface</item>
+        <item name="android:windowSplashScreenBackground">@color/md_theme_light_surface</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/md_theme_light_onPrimary
+        </item>
+
+        <item name="android:windowBackground">@drawable/app_logo</item>
+        <item name="windowActionBar">false</item>
+        <item name="postSplashScreenTheme">@style/Theme.Compose</item>
+
+    </style>
+
+</resources>

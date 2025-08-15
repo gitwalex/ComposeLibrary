@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--color for diagramm -->
+    <color name="temperaturLine">@android:color/holo_red_light</color>
+    <color name="chargeLevelLine">@android:color/holo_blue_light</color>
+
+    <!--    Colors für Icons -->
+
+    <color name="cardcolor">#80B3CDE0</color>
+    <!--widget colors-->
+
+    <color name="chargeColor">#FF1d00ff</color>,
+    <color name="midChargeColor">#FFe6dd3d</color>,
+    <color name="goodChargeColor">#FF47f063</color>,
+    <color name="lowChargeColor">#FFa1173c</color>,
+    <color name="widget_background">#FFFFFF</color>
+    <color name="widget_text">#1A1C1E</color>
+
+    <!---->
+
+    <color name="md_theme_light_primary">#265EA7</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_secondary">#006689</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_error">#BA1A1A</color>
+    <color name="md_theme_light_onError">#FFFFFF</color>
+    <color name="md_theme_light_background">#FDFBFF</color>
+    <color name="md_theme_light_onBackground">#1A1C1E</color>
+    <color name="md_theme_light_surface">#FFFFFF</color>
+    <color name="md_theme_light_onSurface">#1A1C1E</color>
+    <color name="md_theme_light_primaryContainer">#CEE5FF</color>
+    <color name="md_theme_light_onPrimaryContainer">#001D33</color>
+    <color name="md_theme_light_secondaryContainer">#A5F5A8</color>
+    <color name="md_theme_light_onSecondaryContainer">#002107</color>
+    <color name="md_theme_light_tertiary">#7D5800</color>
+    <color name="md_theme_light_onTertiary">#FFFFFF</color>
+    <color name="md_theme_light_tertiaryContainer">#FFDEA9</color>
+    <color name="md_theme_light_onTertiaryContainer">#271900</color>
+    <color name="md_theme_light_errorContainer">#FFDAD6</color>
+    <color name="md_theme_light_onErrorContainer">#410002</color>
+    <color name="md_theme_light_surfaceVariant">#DEE3EB</color>
+    <color name="md_theme_light_onSurfaceVariant">#42474E</color>
+    <color name="md_theme_light_outline">#72777F</color>
+    <color name="md_theme_light_inverseOnSurface">#F1F0F4</color>
+    <color name="md_theme_light_inverseSurface">#2F3033</color>
+    <color name="md_theme_light_inversePrimary">#98CBFF</color>
+    <color name="md_theme_light_surfaceTint">#00639C</color>
+    <color name="md_theme_light_outlineVariant">#C2C7CF</color>
+    <color name="md_theme_light_scrim">#000000</color>
+
+    <color name="md_theme_dark_primary">#A8C8FF</color>
+    <color name="md_theme_dark_onPrimary">#003062</color>
+    <color name="md_theme_dark_secondary">#78D1FF</color>
+    <color name="md_theme_dark_onSecondary">#003549</color>
+    <color name="md_theme_dark_error">#FFB4AB</color>
+    <color name="md_theme_dark_onError">#690005</color>
+    <color name="md_theme_dark_background">#1A1C1E</color>
+    <color name="md_theme_dark_onBackground">#E3E2E6</color>
+    <color name="md_theme_dark_surface">#1A1C1E</color>
+    <color name="md_theme_dark_onSurface">#E3E2E6</color>
+    <color name="md_theme_dark_primaryContainer">#1A1C1E</color>
+    <color name="md_theme_dark_onPrimaryContainer">#CEE5FF</color>
+    <color name="md_theme_dark_secondaryContainer">#00531C</color>
+    <color name="md_theme_dark_onSecondaryContainer">#A5F5A8</color>
+    <color name="md_theme_dark_tertiary">#FFBA25</color>
+    <color name="md_theme_dark_onTertiary">#422D00</color>
+    <color name="md_theme_dark_tertiaryContainer">#5E4200</color>
+    <color name="md_theme_dark_onTertiaryContainer">#FFDEA9</color>
+    <color name="md_theme_dark_errorContainer">#93000A</color>
+    <color name="md_theme_dark_onErrorContainer">#FFDAD6</color>
+    <color name="md_theme_dark_surfaceVariant">#42474E</color>
+    <color name="md_theme_dark_onSurfaceVariant">#C2C7CF</color>
+    <color name="md_theme_dark_outline">#8C9199</color>
+    <color name="md_theme_dark_inverseOnSurface">#1A1C1E</color>
+    <color name="md_theme_dark_inverseSurface">#E2E2E5</color>
+    <color name="md_theme_dark_inversePrimary">#00639C</color>
+    <color name="md_theme_dark_surfaceTint">#98CBFF</color>
+    <color name="md_theme_dark_outlineVariant">#42474E</color>
+    <color name="md_theme_dark_scrim">#000000</color>
+    <color name="border_color_blue">#FF33B5E5</color>
+    <color name="border_color_orange">#FFFFBB33</color>
+
+
+</resources>
