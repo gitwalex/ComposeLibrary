@@ -13,13 +13,11 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
@@ -253,33 +251,7 @@ private val highContrastDarkColorScheme = darkColorScheme(
 )
 
 
-object ChargeLevelColors {
-    val chargeColor = Color(0xFF0099CC)
-    val midChargeColor = Color(0xFFFFF257)
-    val goodChargeColor = Color(0xFF99CC00)
-    val lowChargeColor = Color(0xFFFF4444)
-    val arc_background_color = Color(0xFFEEEEEE)
-}
-
-object TemperatureLevelColors {
-    val midTempColor = Color(0xFFFFF257)
-    val goodTempColor = Color(0xFF99CC00)
-    val hotTempColor = Color(0xFFFF4444)
-}
-
-object HealthLevelColors {
-    val midHealthColor = Color(0xFFFF8800)
-    val goodHealthColor = Color(0xFF99CC00)
-    val badHealthColor = Color(0xFFFF4444)
-}
-
 val LocalExtendedColors = staticCompositionLocalOf { ExtendedColorScheme(material = lightScheme) }
-
-object ExtendedTheme {
-    val colors: ExtendedColorScheme
-        @Composable
-        get() = LocalExtendedColors.current
-}
 
 
 /**
@@ -288,7 +260,7 @@ object ExtendedTheme {
  * @see <a href="https://gist.github.com/Khazbs/1f1f1b5c05f45dbfa465f249b1e20506"></a>
  */
 @Composable
-fun AppTheme(
+fun GerwalexTheme(
     isSystemInDarkMode: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
@@ -314,11 +286,9 @@ fun AppTheme(
             )
         }) { darkMode ->
         if (!view.isInEditMode) {
-            SideEffect {
-                val window = (view.context as Activity).window
-                WindowCompat.getInsetsController(window, window.decorView).apply {
-                    isAppearanceLightStatusBars = !useDarkTheme // Control icon visibility
-                }
+            val window = (view.context as Activity).window
+            WindowCompat.getInsetsController(window, window.decorView).apply {
+                isAppearanceLightStatusBars = !useDarkTheme // Control icon visibility
             }
         }
         val themeColors = if (darkMode)

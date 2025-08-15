@@ -21,10 +21,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.lifecycleScope
-import com.gerwalex.demo.ui.theme.ComposeTheme
+import com.gerwalex.batteryguard.ui.theme.GerwalexTheme
 import com.gerwalex.library.R
 import com.gerwalex.library.StaggeredList
 import com.gerwalex.library.animation.HeartBeatAnimation
+import com.gerwalex.library.compose.calculator.CalculatorScreen
 import com.gerwalex.library.compose.components.BreathingButton
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -88,7 +89,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Content(modifier: Modifier = Modifier) {
-    ComposeTheme {
+    GerwalexTheme {
         Scaffold(modifier = modifier.safeDrawingPadding()) { padding ->
             Column(
                 modifier = Modifier
@@ -96,8 +97,9 @@ fun Content(modifier: Modifier = Modifier) {
                     .fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                BreathingButtonDemo()
-                StaggeredListDemo()
+//                BreathingButtonDemo()
+//                StaggeredListDemo()
+                CalculatorScreen()
             }
         }
     }
