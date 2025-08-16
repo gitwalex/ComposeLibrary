@@ -11,10 +11,28 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.delay
+import kotlin.time.Duration.Companion.seconds
+
+@Composable
+fun BreathingButtonDemo(modifier: Modifier = Modifier) {
+    var isLoading by remember { mutableStateOf(false) }
+    LaunchedEffect(isLoading) {
+        if (isLoading) {
+            delay(5.seconds)
+            isLoading = false
+        }
+    }
+    BreathingButton(isLoading = isLoading, modifier = modifier, onClick = { isLoading = true })
+}
 
 /**
  * A Composable function that creates a button with a "breathing" animation when in a loading state.
