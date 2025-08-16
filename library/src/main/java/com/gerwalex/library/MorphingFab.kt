@@ -15,6 +15,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -26,7 +27,33 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun MorphingFAB(modifier: Modifier = Modifier, expandedContent: @Composable () -> Unit) {
+fun MorphingFABDemo(modifier: Modifier = Modifier) {
+    MorphingFAB(
+        modifier = modifier,
+        icon = {
+            Icon(
+                Icons.Default.Add,
+                contentDescription = "Add",
+                tint = MaterialTheme.colorScheme.onPrimary
+            )
+        }, expandedContent = {
+            LazyColumn(
+                modifier = Modifier.padding(16.dp)
+            ) {
+                items(3) { index ->
+                    Text(text = "Action ${index + 1}")
+                }
+            }
+
+        })
+}
+
+@Composable
+fun MorphingFAB(
+    modifier: Modifier = Modifier,
+    icon: @Composable () -> Unit,
+    expandedContent: @Composable () -> Unit
+) {
     var expanded by remember { mutableStateOf(false) }
     val transition = updateTransition(targetState = expanded, label = "fab_transition")
 
@@ -45,28 +72,14 @@ fun MorphingFAB(modifier: Modifier = Modifier, expandedContent: @Composable () -
     }
 
     Box(
-        modifier = Modifier
+        contentAlignment = Alignment.Center,
+        modifier = modifier
             .size(fabSize)
             .clip(RoundedCornerShape(cornerRadius))
             .background(MaterialTheme.colorScheme.primary)
             .clickable { expanded = !expanded }
     ) {
-        if (!expanded) {
-            Icon(
-                Icons.Default.Add,
-                contentDescription = "Add",
-                modifier = Modifier.align(Alignment.Center),
-                tint = MaterialTheme.colorScheme.onPrimary
-            )
-        } else {
-            // Your expanded content here
-            LazyColumn(
-                modifier = Modifier.padding(16.dp)
-            ) {
-                items(3) { index ->
-                    //ActionItem(text = "Action ${index + 1}")
-                }
-            }
-        }
+        if (expanded)
+            expandedContent() else icon()
     }
 }
