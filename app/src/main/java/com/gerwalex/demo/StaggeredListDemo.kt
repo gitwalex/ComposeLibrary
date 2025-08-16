@@ -42,7 +42,7 @@ fun StaggeredListDemo() {
     }
     LazyColumn(
         contentPadding = PaddingValues(8.dp),
-        horizontalAlignment = Alignment.Companion.CenterHorizontally,
+        horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(8.dp)
 
     ) {
@@ -56,11 +56,11 @@ fun StaggeredListDemo() {
             )
 
             Box(
-                modifier = Modifier.Companion
+                modifier = Modifier
                     .fillMaxWidth()
                     .alpha(animatedVisibility)
                     .offset(y = (50 * (1f - animatedVisibility)).dp),
-                contentAlignment = Alignment.Companion.Center
+                contentAlignment = Alignment.Center
             ) {
                 item.content()
             }
