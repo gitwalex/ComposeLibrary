@@ -1,4 +1,4 @@
-package com.gerwalex.library.compose
+package com.gerwalex.library.modifier
 
 import androidx.compose.ui.Modifier
 
