@@ -19,16 +19,19 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.unit.dp
+import com.gerwalex.library.MorphingFABDemo
 import com.gerwalex.library.compose.components.BreathingButtonDemo
 import com.gerwalex.library.modifier.JumpOnClickDemo
 
-sealed class ScreenItem
-object BreathingButton : ScreenItem()
-object JumpOnClickDemo : ScreenItem()
+sealed class ScreenItem(val content: @Composable () -> Unit)
+object BreathingButton : ScreenItem({ BreathingButtonDemo() })
+object JumpOnClickDemo : ScreenItem({ JumpOnClickDemo() })
+object MorphingFABDemo : ScreenItem({ MorphingFABDemo() })
 
 val list = listOf(
     BreathingButton,
-    JumpOnClickDemo
+    JumpOnClickDemo,
+    MorphingFABDemo,
 )
 
 @Composable
@@ -59,10 +62,7 @@ fun StaggeredListDemo() {
                     .offset(y = (50 * (1f - animatedVisibility)).dp),
                 contentAlignment = Alignment.Companion.Center
             ) {
-                when (item) {
-                    is BreathingButton -> BreathingButtonDemo()
-                    is JumpOnClickDemo -> JumpOnClickDemo()
-                }
+                item.content()
             }
         }
     }
